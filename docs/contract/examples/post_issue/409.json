@@ -1,0 +1,30 @@
+{
+  "description": "Not enough stock in the batch.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/stock/issues",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+      "quantity": 600
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "INSUFFICIENT_STOCK",
+        "message": "Not enough stock available.",
+        "details": {
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+          "requested": 600,
+          "available": 400
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

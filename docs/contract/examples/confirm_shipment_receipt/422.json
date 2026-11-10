@@ -1,0 +1,40 @@
+{
+  "description": "More was counted than was sent.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/shipments/33333333-3333-4333-8333-333333333333/receipt",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "version": 1,
+      "lines": [
+        {
+          "shipment_line_id": "44444444-4444-4444-8444-444444444441",
+          "qty_received": 15
+        },
+        {
+          "shipment_line_id": "44444444-4444-4444-8444-444444444442",
+          "qty_received": 30
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "The request is invalid.",
+        "details": [
+          {
+            "path": "lines.1.qty_received",
+            "code": "exceeds_dispatched",
+            "message": "qty_received cannot exceed qty_dispatched (25)."
+          }
+        ],
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

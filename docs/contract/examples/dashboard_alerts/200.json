@@ -1,0 +1,86 @@
+{
+  "description": "Most urgent first.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/dashboard/alerts"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "key": "stock_level:5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22:e3b0c442-98fc-4c14-9afb-f4c8996fb924",
+          "type": "stock_level",
+          "level": "out_of_stock",
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "facility_name": "Riverbend PHC",
+          "item_id": "e3b0c442-98fc-4c14-9afb-f4c8996fb924",
+          "item_code": "ors-sachet",
+          "item_name": "Oral rehydration salts",
+          "batch_id": null,
+          "batch_number": null,
+          "quantity": 0,
+          "threshold": null,
+          "expiry_date": null,
+          "message": "Oral rehydration salts is out of stock at Riverbend PHC."
+        },
+        {
+          "key": "expired_stock:5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22:b2e4a6c8-0d1f-4e79-9b1c-4d6f8a0b2c3d",
+          "type": "expired_stock",
+          "level": null,
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "facility_name": "Riverbend PHC",
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "item_code": "amox-250-cap",
+          "item_name": "Amoxicillin 250 mg capsules",
+          "batch_id": "b2e4a6c8-0d1f-4e79-9b1c-4d6f8a0b2c3d",
+          "batch_number": "AMX-2025-001",
+          "quantity": 30,
+          "threshold": null,
+          "expiry_date": "2026-10-31",
+          "message": "30 capsules of batch AMX-2025-001 expired on 2026-10-31."
+        },
+        {
+          "key": "expiring_soon:5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22:a1d3f5b7-9c2e-4d68-8a0b-3c5e7f9a1b2c",
+          "type": "expiring_soon",
+          "level": null,
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "facility_name": "Riverbend PHC",
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "item_code": "amox-250-cap",
+          "item_name": "Amoxicillin 250 mg capsules",
+          "batch_id": "a1d3f5b7-9c2e-4d68-8a0b-3c5e7f9a1b2c",
+          "batch_number": "AMX-2025-003",
+          "quantity": 80,
+          "threshold": null,
+          "expiry_date": "2026-11-20",
+          "message": "80 capsules of batch AMX-2025-003 expire on 2026-11-20."
+        },
+        {
+          "key": "stock_level:5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22:7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "type": "stock_level",
+          "level": "reorder",
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "facility_name": "Riverbend PHC",
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "item_code": "amox-250-cap",
+          "item_name": "Amoxicillin 250 mg capsules",
+          "batch_id": null,
+          "batch_number": null,
+          "quantity": 480,
+          "threshold": 500,
+          "expiry_date": null,
+          "message": "Amoxicillin 250 mg capsules is at or below its reorder level."
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 4,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": []
+      }
+    }
+  }
+}

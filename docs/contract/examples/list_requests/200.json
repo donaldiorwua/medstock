@@ -1,0 +1,35 @@
+{
+  "description": "Requests, newest first.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/requests"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "id": "11111111-1111-4111-8111-111111111111",
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "facility_name": "Riverbend PHC",
+          "supplier_facility_id": "0b8e6f0a-3c52-4a0f-9b6d-1f2a7c9d4e11",
+          "supplier_facility_name": "Central Medical Store",
+          "status": "submitted",
+          "version": 2,
+          "line_count": 2,
+          "created_at": "2026-11-03T07:50:00Z",
+          "submitted_at": "2026-11-03T08:10:00Z",
+          "allowed_actions": []
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 1,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": []
+      }
+    }
+  }
+}

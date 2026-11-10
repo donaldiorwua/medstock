@@ -1,0 +1,15 @@
+{
+  "description": "A CSRF token for this session.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/auth/csrf"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "csrf_token": "k3J9xQp0Zr7vYt2WmL5nB8cD1fGhA4sE"
+      }
+    }
+  }
+}

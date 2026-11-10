@@ -1,0 +1,33 @@
+{
+  "description": "Reorder level is below the critical level.",
+  "request": {
+    "method": "PUT",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/thresholds",
+    "body": {
+      "thresholds": [
+        {
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "reorder_level": 100,
+          "critical_level": 200
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "The request is invalid.",
+        "details": [
+          {
+            "path": "thresholds.0",
+            "code": "value_error",
+            "message": "Value error, reorder_level must be greater than or equal to critical_level."
+          }
+        ],
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

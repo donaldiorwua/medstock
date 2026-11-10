@@ -1,0 +1,80 @@
+{
+  "description": "The store approves 40 of 50 and rejects the other line.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/requests/11111111-1111-4111-8111-111111111111/review",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "version": 3,
+      "note": "Oral rehydration salts out of stock until next delivery",
+      "lines": [
+        {
+          "line_id": "22222222-2222-4222-8222-222222222221",
+          "qty_approved": 40
+        },
+        {
+          "line_id": "22222222-2222-4222-8222-222222222222",
+          "qty_approved": 0,
+          "note": "Out of stock"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+        "facility_name": "Riverbend PHC",
+        "supplier_facility_id": "0b8e6f0a-3c52-4a0f-9b6d-1f2a7c9d4e11",
+        "supplier_facility_name": "Central Medical Store",
+        "status": "partially_approved",
+        "version": 4,
+        "line_count": 2,
+        "created_at": "2026-11-03T07:50:00Z",
+        "submitted_at": "2026-11-03T08:10:00Z",
+        "allowed_actions": [
+          "dispatch"
+        ],
+        "note": "Monthly resupply",
+        "created_by_id": "2f6a8c10-5d4e-4b7a-9c3d-8e1f0a2b3c4d",
+        "created_by_name": "Chidi Officer",
+        "reviewed_at": "2026-11-04T09:00:00Z",
+        "reviewed_by_name": "Samuel Store",
+        "review_note": "Oral rehydration salts out of stock until next delivery",
+        "shipment_id": null,
+        "lines": [
+          {
+            "id": "22222222-2222-4222-8222-222222222221",
+            "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+            "item_code": "amox-250-cap",
+            "item_name": "Amoxicillin 250 mg capsules",
+            "base_unit": "capsule",
+            "qty_requested": 50,
+            "qty_approved": 40,
+            "qty_dispatched": null,
+            "qty_received": null,
+            "status": "partially_approved",
+            "review_note": null
+          },
+          {
+            "id": "22222222-2222-4222-8222-222222222222",
+            "item_id": "e3b0c442-98fc-4c14-9afb-f4c8996fb924",
+            "item_code": "ors-sachet",
+            "item_name": "Oral rehydration salts",
+            "base_unit": "sachet",
+            "qty_requested": 100,
+            "qty_approved": 0,
+            "qty_dispatched": null,
+            "qty_received": null,
+            "status": "rejected",
+            "review_note": "Out of stock"
+          }
+        ]
+      }
+    }
+  }
+}

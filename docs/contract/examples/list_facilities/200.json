@@ -1,0 +1,40 @@
+{
+  "description": "All facilities (admin view).",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/facilities"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "id": "0b8e6f0a-3c52-4a0f-9b6d-1f2a7c9d4e11",
+          "code": "cms-01",
+          "name": "Central Medical Store",
+          "facility_type": "central_store",
+          "timezone": "Africa/Lagos",
+          "is_active": true,
+          "created_at": "2026-10-01T08:00:00Z"
+        },
+        {
+          "id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "code": "phc-riverbend",
+          "name": "Riverbend PHC",
+          "facility_type": "phc",
+          "timezone": "Africa/Lagos",
+          "is_active": true,
+          "created_at": "2026-10-01T08:05:00Z"
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 2,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": []
+      }
+    }
+  }
+}

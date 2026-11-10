@@ -1,0 +1,15 @@
+{
+  "description": "All data removed (test and e2e only).",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/test/reset"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "reset": true
+      }
+    }
+  }
+}

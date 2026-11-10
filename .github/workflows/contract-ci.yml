@@ -1,0 +1,50 @@
+name: contract-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+defaults:
+  run:
+    working-directory: apps/api
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the base branch must be available for the comparison below
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: apps/api/requirements*.txt
+      - run: pip install -r requirements.txt
+
+      - name: Committed contract files match the code
+        run: python -m app.contract check
+
+      - name: Install oasdiff
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -fsSL https://raw.githubusercontent.com/oasdiff/oasdiff/main/install.sh \
+            | sh -s -- -b "$HOME/.local/bin" v1.27.0
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Fail on breaking contract changes (unless labelled breaking-contract)
+        if: >-
+          github.event_name == 'pull_request' &&
+          !contains(github.event.pull_request.labels.*.name, 'breaking-contract')
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          if git cat-file -e "origin/${BASE_REF}:docs/contract/openapi.json" 2>/dev/null; then
+            git show "origin/${BASE_REF}:docs/contract/openapi.json" > /tmp/base-openapi.json
+            oasdiff breaking /tmp/base-openapi.json ../../docs/contract/openapi.json --fail-on ERR
+          else
+            echo "The base branch has no contract file yet; nothing to compare."
+          fi

@@ -1,0 +1,22 @@
+# Local PostgreSQL for development and for the dual-database tests.
+# Fictional credentials, local use only.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: medstock
+      POSTGRES_PASSWORD: medstock
+      POSTGRES_DB: medstock
+    ports:
+      - "5432:5432"
+    volumes:
+      - medstock-pg:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medstock -d medstock"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  medstock-pg:

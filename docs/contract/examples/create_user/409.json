@@ -1,0 +1,31 @@
+{
+  "description": "The email is already in use.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/users",
+    "body": {
+      "email": "chidi.officer@example.org",
+      "full_name": "Chidi Officer",
+      "temporary_password": "temporary-pass-123",
+      "memberships": [
+        {
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "role": "phc_officer"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "CONFLICT",
+        "message": "A record with this value already exists.",
+        "details": {
+          "field": "email"
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

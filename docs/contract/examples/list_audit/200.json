@@ -1,0 +1,38 @@
+{
+  "description": "Recent changes.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/audit"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "id": "66666666-6666-4666-8666-666666666666",
+          "occurred_at": "2026-11-07T09:30:00Z",
+          "actor_id": "2f6a8c10-5d4e-4b7a-9c3d-8e1f0a2b3c4d",
+          "actor_name": "Chidi Officer",
+          "action": "stock.issue.posted",
+          "entity_type": "stock_movement",
+          "entity_id": "00000000-0000-4000-8000-000000000012",
+          "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+          "summary": "Issued 60 capsules of Amoxicillin 250 mg, batch AMX-2026-014.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f",
+          "details": {
+            "quantity": 60,
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21"
+          }
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 1,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": []
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "description": "Opening stock was already recorded for this batch.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/stock/opening",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+      "quantity": 400,
+      "signed_off_by": "Ngozi Okafor"
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "OPENING_STOCK_EXISTS",
+        "message": "Opening stock was already recorded for this batch.",
+        "details": {
+          "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21"
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

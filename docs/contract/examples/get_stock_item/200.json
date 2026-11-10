@@ -1,0 +1,61 @@
+{
+  "description": "One item with its batches.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/stock/items/7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+        "item_code": "amox-250-cap",
+        "item_name": "Amoxicillin 250 mg capsules",
+        "base_unit": "capsule",
+        "qty_usable": 480,
+        "qty_quarantined": 20,
+        "qty_expired": 30,
+        "reorder_level": 500,
+        "critical_level": 200,
+        "alert_level": "reorder",
+        "nearest_expiry_date": "2026-11-20",
+        "last_movement_at": "2026-11-07T09:30:00Z",
+        "batches": [
+          {
+            "batch_id": "b2e4a6c8-0d1f-4e79-9b1c-4d6f8a0b2c3d",
+            "batch_number": "AMX-2025-001",
+            "expiry_date": "2026-10-31",
+            "days_to_expiry": -7,
+            "is_expired": true,
+            "expiring_soon": false,
+            "qty_available": 30,
+            "qty_quarantined": 0,
+            "qty_usable": 0
+          },
+          {
+            "batch_id": "a1d3f5b7-9c2e-4d68-8a0b-3c5e7f9a1b2c",
+            "batch_number": "AMX-2025-003",
+            "expiry_date": "2026-11-20",
+            "days_to_expiry": 13,
+            "is_expired": false,
+            "expiring_soon": true,
+            "qty_available": 80,
+            "qty_quarantined": 20,
+            "qty_usable": 80
+          },
+          {
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+            "batch_number": "AMX-2026-014",
+            "expiry_date": "2027-08-31",
+            "days_to_expiry": 297,
+            "is_expired": false,
+            "expiring_soon": false,
+            "qty_available": 400,
+            "qty_quarantined": 0,
+            "qty_usable": 400
+          }
+        ]
+      }
+    }
+  }
+}

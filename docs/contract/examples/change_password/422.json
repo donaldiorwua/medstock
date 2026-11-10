@@ -1,0 +1,28 @@
+{
+  "description": "The current password is wrong.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/auth/change-password",
+    "body": {
+      "current_password": "not-my-password",
+      "new_password": "a-much-better-passphrase"
+    }
+  },
+  "response": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "The request is invalid.",
+        "details": [
+          {
+            "path": "current_password",
+            "code": "incorrect_password",
+            "message": "Current password is incorrect."
+          }
+        ],
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}
