@@ -1,0 +1,24 @@
+{
+  "description": "A dispatch row cannot be reversed here.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/movements/00000000-0000-4000-8000-000000000030/reversal",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "note": "Entered by mistake"
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "REVERSAL_NOT_ALLOWED",
+        "message": "This movement cannot be reversed.",
+        "details": null,
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "description": "The PHC's stock register, with warnings.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/stock"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "item_code": "amox-250-cap",
+          "item_name": "Amoxicillin 250 mg capsules",
+          "base_unit": "capsule",
+          "qty_usable": 480,
+          "qty_quarantined": 20,
+          "qty_expired": 30,
+          "reorder_level": 500,
+          "critical_level": 200,
+          "alert_level": "reorder",
+          "nearest_expiry_date": "2026-11-20",
+          "last_movement_at": "2026-11-07T09:30:00Z"
+        },
+        {
+          "item_id": "e3b0c442-98fc-4c14-9afb-f4c8996fb924",
+          "item_code": "ors-sachet",
+          "item_name": "Oral rehydration salts",
+          "base_unit": "sachet",
+          "qty_usable": 0,
+          "qty_quarantined": 0,
+          "qty_expired": 0,
+          "reorder_level": null,
+          "critical_level": null,
+          "alert_level": "out_of_stock",
+          "nearest_expiry_date": null,
+          "last_movement_at": null
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 2,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": [
+          {
+            "code": "batch_expiring_soon",
+            "message": "1 batch expires within 90 days."
+          }
+        ]
+      }
+    }
+  }
+}

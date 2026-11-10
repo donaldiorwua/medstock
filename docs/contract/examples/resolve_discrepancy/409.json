@@ -1,0 +1,28 @@
+{
+  "description": "Already resolved.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/discrepancies/55555555-5555-4555-8555-555555555555/resolve",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "version": 2,
+      "resolution": "written_off"
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "INVALID_TRANSITION",
+        "message": "This action is not allowed in the current status.",
+        "details": {
+          "current_status": "resolved",
+          "action": "resolve"
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Already submitted.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/requests/11111111-1111-4111-8111-111111111111/submit",
+    "headers": {
+      "Idempotency-Key": "6f1d2c3b-4a59-4e8f-9b7a-0c1d2e3f4a5b"
+    },
+    "body": {
+      "version": 3
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "INVALID_TRANSITION",
+        "message": "This action is not allowed in the current status.",
+        "details": {
+          "current_status": "submitted",
+          "action": "submit"
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

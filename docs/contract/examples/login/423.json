@@ -1,0 +1,24 @@
+{
+  "description": "Five failed attempts locked the account.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "body": {
+      "email": "chidi.officer@example.org",
+      "password": "anything"
+    }
+  },
+  "response": {
+    "status": 423,
+    "body": {
+      "error": {
+        "code": "ACCOUNT_LOCKED",
+        "message": "The account is temporarily locked.",
+        "details": {
+          "retry_after_seconds": 900
+        },
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

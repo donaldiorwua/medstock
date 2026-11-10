@@ -1,0 +1,24 @@
+{
+  "description": "The e2e dataset is loaded.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/test/seed",
+    "body": {
+      "profile": "e2e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "profile": "e2e",
+        "counts": {
+          "users": 6,
+          "facilities": 4,
+          "items": 12,
+          "batches": 30
+        }
+      }
+    }
+  }
+}

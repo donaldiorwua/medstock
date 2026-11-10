@@ -1,0 +1,179 @@
+{
+  "contract_version": "0.1.0",
+  "enums": {
+    "AdjustmentReason": {
+      "description": "Reason code required on every stock adjustment.",
+      "values": [
+        "count_correction",
+        "damage",
+        "loss",
+        "found",
+        "entry_error",
+        "other"
+      ]
+    },
+    "AlertLevel": {
+      "description": "Stock level of an item at a facility, derived from its thresholds.",
+      "values": [
+        "ok",
+        "reorder",
+        "critical",
+        "out_of_stock"
+      ]
+    },
+    "AlertType": {
+      "description": "Kind of alert on the dashboard.",
+      "values": [
+        "stock_level",
+        "expiring_soon",
+        "expired_stock",
+        "facility_stale",
+        "discrepancy_open"
+      ]
+    },
+    "DiscrepancyAction": {
+      "description": "Actions a user may take on a discrepancy (its allowed_actions).",
+      "values": [
+        "resolve"
+      ]
+    },
+    "DiscrepancyResolution": {
+      "description": "How a discrepancy was resolved, with the stock effect each one has.",
+      "values": [
+        "written_off",
+        "recovered_to_phc",
+        "recovered_to_store"
+      ]
+    },
+    "DiscrepancyStatus": {
+      "description": "Whether a shipment shortfall is still unresolved.",
+      "values": [
+        "open",
+        "resolved"
+      ]
+    },
+    "ExportResource": {
+      "description": "What a CSV export contains.",
+      "values": [
+        "stock",
+        "movements",
+        "requests",
+        "shipments",
+        "discrepancies"
+      ]
+    },
+    "FacilityType": {
+      "description": "Kind of facility in the supply chain.",
+      "values": [
+        "central_store",
+        "phc"
+      ]
+    },
+    "LineStatus": {
+      "description": "Status of one item line inside a resupply request.",
+      "values": [
+        "pending",
+        "approved",
+        "partially_approved",
+        "rejected",
+        "dispatched",
+        "received",
+        "short_received"
+      ]
+    },
+    "MovementAction": {
+      "description": "Actions a user may take on a ledger row (listed in its allowed_actions).",
+      "values": [
+        "reverse"
+      ]
+    },
+    "MovementType": {
+      "description": "Why a row was appended to the stock ledger.",
+      "values": [
+        "opening",
+        "receipt",
+        "issue",
+        "adjustment",
+        "quarantine",
+        "release",
+        "expiry_writeoff",
+        "reversal",
+        "dispatch",
+        "shipment_receipt",
+        "discrepancy_write_off",
+        "discrepancy_recovery_to_phc",
+        "discrepancy_recovery_to_store"
+      ]
+    },
+    "RequestAction": {
+      "description": "Actions a user may take on a resupply request (its allowed_actions).",
+      "values": [
+        "edit",
+        "submit",
+        "cancel",
+        "review",
+        "dispatch"
+      ]
+    },
+    "RequestStatus": {
+      "description": "Lifecycle of a resupply request (derived from its lines where relevant).",
+      "values": [
+        "draft",
+        "submitted",
+        "approved",
+        "partially_approved",
+        "rejected",
+        "dispatched",
+        "received",
+        "discrepancy_open",
+        "closed",
+        "cancelled"
+      ]
+    },
+    "Role": {
+      "description": "What a user may do at a facility.",
+      "values": [
+        "admin",
+        "store_manager",
+        "phc_officer",
+        "viewer"
+      ]
+    },
+    "SeedProfile": {
+      "description": "Which fictional dataset the test-only seed endpoint loads.",
+      "values": [
+        "demo",
+        "e2e"
+      ]
+    },
+    "ShipmentAction": {
+      "description": "Actions a user may take on a shipment (its allowed_actions).",
+      "values": [
+        "confirm_receipt"
+      ]
+    },
+    "ShipmentStatus": {
+      "description": "Lifecycle of a shipment.",
+      "values": [
+        "in_transit",
+        "received",
+        "received_with_discrepancy"
+      ]
+    },
+    "StockBucket": {
+      "description": "Which balance a ledger row changes. Quarantine and release post one row to each.",
+      "values": [
+        "available",
+        "quarantined"
+      ]
+    },
+    "WarningCode": {
+      "description": "Non-fatal notes the API can attach to a successful response (meta.warnings).",
+      "values": [
+        "adjustment_needs_review",
+        "batch_expiring_soon",
+        "facility_data_stale"
+      ]
+    }
+  }
+}

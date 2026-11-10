@@ -1,0 +1,30 @@
+{
+  "description": "The signed-in user.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/auth/me"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "user": {
+          "id": "2f6a8c10-5d4e-4b7a-9c3d-8e1f0a2b3c4d",
+          "email": "chidi.officer@example.org",
+          "full_name": "Chidi Officer"
+        },
+        "memberships": [
+          {
+            "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+            "facility_code": "phc-riverbend",
+            "facility_name": "Riverbend PHC",
+            "facility_type": "phc",
+            "role": "phc_officer"
+          }
+        ],
+        "password_change_required": false,
+        "session_expires_at": "2026-11-07T21:30:00Z"
+      }
+    }
+  }
+}

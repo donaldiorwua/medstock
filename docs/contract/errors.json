@@ -1,0 +1,355 @@
+{
+  "contract_version": "0.1.0",
+  "errors": {
+    "ACCOUNT_LOCKED": {
+      "example": {
+        "error": {
+          "code": "ACCOUNT_LOCKED",
+          "details": {
+            "retry_after_seconds": 900
+          },
+          "message": "The account is temporarily locked.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 423,
+      "meaning": "Too many failed logins. The account is locked for a fixed period."
+    },
+    "BACKDATE_LIMIT_EXCEEDED": {
+      "example": {
+        "error": {
+          "code": "BACKDATE_LIMIT_EXCEEDED",
+          "details": {
+            "max_backdate_days": 30
+          },
+          "message": "The date is too far in the past.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 422,
+      "meaning": "The movement date is further in the past than the allowed backdating window."
+    },
+    "BATCH_EXPIRED": {
+      "example": {
+        "error": {
+          "code": "BATCH_EXPIRED",
+          "details": {
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+            "expiry_date": "2026-10-31"
+          },
+          "message": "This batch has expired.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The batch is past its expiry date and cannot be used."
+    },
+    "BATCH_QUARANTINED": {
+      "example": {
+        "error": {
+          "code": "BATCH_QUARANTINED",
+          "details": {
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21"
+          },
+          "message": "This stock is quarantined.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The stock is in quarantine and cannot be used until released."
+    },
+    "CONFLICT": {
+      "example": {
+        "error": {
+          "code": "CONFLICT",
+          "details": {
+            "field": "email"
+          },
+          "message": "A record with this value already exists.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The request conflicts with current data, for example a duplicate unique value."
+    },
+    "CSRF_FAILED": {
+      "example": {
+        "error": {
+          "code": "CSRF_FAILED",
+          "details": null,
+          "message": "The CSRF token is missing or invalid.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 403,
+      "meaning": "The CSRF token is missing or wrong on a mutating request."
+    },
+    "DATABASE_UNAVAILABLE": {
+      "example": {
+        "error": {
+          "code": "DATABASE_UNAVAILABLE",
+          "details": null,
+          "message": "The database is not reachable.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 503,
+      "meaning": "The database cannot be reached right now. Retry later."
+    },
+    "FORBIDDEN": {
+      "example": {
+        "error": {
+          "code": "FORBIDDEN",
+          "details": null,
+          "message": "You are not allowed to perform this action.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 403,
+      "meaning": "The caller is signed in and may see this resource but may not perform this action."
+    },
+    "HTTP_ERROR": {
+      "example": {
+        "error": {
+          "code": "HTTP_ERROR",
+          "details": null,
+          "message": "Bad Request",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 400,
+      "meaning": "A framework-level HTTP error with no more specific code. The response keeps the original HTTP status."
+    },
+    "IDEMPOTENCY_KEY_CONFLICT": {
+      "example": {
+        "error": {
+          "code": "IDEMPOTENCY_KEY_CONFLICT",
+          "details": null,
+          "message": "This Idempotency-Key was already used with a different request.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The same Idempotency-Key was reused with a different request body."
+    },
+    "IDEMPOTENCY_KEY_REQUIRED": {
+      "example": {
+        "error": {
+          "code": "IDEMPOTENCY_KEY_REQUIRED",
+          "details": null,
+          "message": "The Idempotency-Key header is required.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 400,
+      "meaning": "A mutating stock endpoint was called without an Idempotency-Key header."
+    },
+    "INSUFFICIENT_STOCK": {
+      "example": {
+        "error": {
+          "code": "INSUFFICIENT_STOCK",
+          "details": {
+            "available": 40,
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+            "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+            "requested": 60
+          },
+          "message": "Not enough stock available.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "Not enough usable stock in the batch. No stock was changed."
+    },
+    "INTERNAL_ERROR": {
+      "example": {
+        "error": {
+          "code": "INTERNAL_ERROR",
+          "details": null,
+          "message": "An unexpected error occurred.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 500,
+      "meaning": "An unexpected server error. Quote the request_id when reporting it."
+    },
+    "INVALID_CREDENTIALS": {
+      "example": {
+        "error": {
+          "code": "INVALID_CREDENTIALS",
+          "details": null,
+          "message": "Email or password is incorrect.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 401,
+      "meaning": "Email or password is wrong. Deliberately does not say which."
+    },
+    "INVALID_TRANSITION": {
+      "example": {
+        "error": {
+          "code": "INVALID_TRANSITION",
+          "details": {
+            "action": "dispatch",
+            "current_status": "draft"
+          },
+          "message": "This action is not allowed in the current status.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The action is not allowed in the record's current status."
+    },
+    "METHOD_NOT_ALLOWED": {
+      "example": {
+        "error": {
+          "code": "METHOD_NOT_ALLOWED",
+          "details": null,
+          "message": "Method Not Allowed",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 405,
+      "meaning": "The URL exists but does not accept this HTTP method."
+    },
+    "NOT_FOUND": {
+      "example": {
+        "error": {
+          "code": "NOT_FOUND",
+          "details": null,
+          "message": "Not Found",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 404,
+      "meaning": "The resource does not exist, or belongs to a facility the caller cannot see."
+    },
+    "NOT_IMPLEMENTED": {
+      "example": {
+        "error": {
+          "code": "NOT_IMPLEMENTED",
+          "details": null,
+          "message": "This endpoint is not implemented yet.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 501,
+      "meaning": "The endpoint is part of the contract but has not been built yet."
+    },
+    "OPENING_STOCK_EXISTS": {
+      "example": {
+        "error": {
+          "code": "OPENING_STOCK_EXISTS",
+          "details": {
+            "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21"
+          },
+          "message": "Opening stock was already recorded for this batch.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "Opening stock can be recorded once per facility and batch."
+    },
+    "PASSWORD_CHANGE_REQUIRED": {
+      "example": {
+        "error": {
+          "code": "PASSWORD_CHANGE_REQUIRED",
+          "details": null,
+          "message": "You must change your password before continuing.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 403,
+      "meaning": "A temporary password is in use. Only change-password and logout are allowed."
+    },
+    "PATIENT_DATA_DETECTED": {
+      "example": {
+        "error": {
+          "code": "PATIENT_DATA_DETECTED",
+          "details": [
+            {
+              "code": "patient_data",
+              "message": "Remove patient identifiers.",
+              "path": "notes"
+            }
+          ],
+          "message": "Free text must not contain patient data.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 422,
+      "meaning": "A free-text field looks like it contains patient data. The value is not echoed back."
+    },
+    "RATE_LIMITED": {
+      "example": {
+        "error": {
+          "code": "RATE_LIMITED",
+          "details": {
+            "retry_after_seconds": 30
+          },
+          "message": "Too many requests.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 429,
+      "meaning": "Too many requests from this client. Retry after the indicated delay."
+    },
+    "REVERSAL_NOT_ALLOWED": {
+      "example": {
+        "error": {
+          "code": "REVERSAL_NOT_ALLOWED",
+          "details": null,
+          "message": "This movement cannot be reversed.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The movement cannot be reversed, for example it was already reversed."
+    },
+    "UNAUTHENTICATED": {
+      "example": {
+        "error": {
+          "code": "UNAUTHENTICATED",
+          "details": null,
+          "message": "Authentication is required.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 401,
+      "meaning": "No valid session. Log in again."
+    },
+    "VALIDATION_ERROR": {
+      "example": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "details": [
+            {
+              "code": "int_parsing",
+              "message": "Input should be a valid integer",
+              "path": "quantity"
+            }
+          ],
+          "message": "The request is invalid.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 422,
+      "meaning": "The request failed validation. details lists each offending field path."
+    },
+    "VERSION_CONFLICT": {
+      "example": {
+        "error": {
+          "code": "VERSION_CONFLICT",
+          "details": {
+            "current_version": 4,
+            "expected_version": 3
+          },
+          "message": "The record was changed by someone else.",
+          "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+        }
+      },
+      "http_status": 409,
+      "meaning": "The record changed since the caller loaded it. Reload and retry."
+    }
+  }
+}

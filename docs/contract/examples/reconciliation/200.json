@@ -1,0 +1,19 @@
+{
+  "description": "The books agree.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/admin/reconciliation"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "checked_at": "2026-11-07T10:05:00Z",
+        "rows_checked": 42,
+        "ok": true,
+        "differences": [],
+        "truncated": false
+      }
+    }
+  }
+}

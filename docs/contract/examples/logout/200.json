@@ -1,0 +1,15 @@
+{
+  "description": "The session ends.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/auth/logout"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "logged_out": true
+      }
+    }
+  }
+}

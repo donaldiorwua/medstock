@@ -1,0 +1,2 @@
+# Contract files are compared byte for byte in CI, so keep LF line endings on every OS.
+docs/contract/** text eol=lf

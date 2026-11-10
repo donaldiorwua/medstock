@@ -1,0 +1,17 @@
+{
+  "description": "The API is running and can reach its database.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/health"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "status": "ok",
+        "database": "ok",
+        "environment": "production"
+      }
+    }
+  }
+}

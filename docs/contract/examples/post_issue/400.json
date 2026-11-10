@@ -1,0 +1,23 @@
+{
+  "description": "The Idempotency-Key header was not sent.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/stock/issues",
+    "headers": {},
+    "body": {
+      "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+      "quantity": 60
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": {
+        "code": "IDEMPOTENCY_KEY_REQUIRED",
+        "message": "The Idempotency-Key header is required.",
+        "details": null,
+        "request_id": "3f2c9d1e8a7b4c6d9e0f1a2b3c4d5e6f"
+      }
+    }
+  }
+}

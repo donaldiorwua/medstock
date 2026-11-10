@@ -1,0 +1,40 @@
+{
+  "description": "Thresholds for a PHC; one item has none set.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/facilities/5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22/thresholds"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+          "item_code": "amox-250-cap",
+          "item_name": "Amoxicillin 250 mg capsules",
+          "base_unit": "capsule",
+          "reorder_level": 500,
+          "critical_level": 200,
+          "updated_at": "2026-10-25T11:00:00Z"
+        },
+        {
+          "item_id": "e3b0c442-98fc-4c14-9afb-f4c8996fb924",
+          "item_code": "ors-sachet",
+          "item_name": "Oral rehydration salts",
+          "base_unit": "sachet",
+          "reorder_level": null,
+          "critical_level": null,
+          "updated_at": null
+        }
+      ],
+      "meta": {
+        "page": {
+          "total": 2,
+          "limit": 50,
+          "offset": 0
+        },
+        "warnings": []
+      }
+    }
+  }
+}

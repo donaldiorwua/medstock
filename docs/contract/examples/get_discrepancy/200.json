@@ -1,0 +1,39 @@
+{
+  "description": "The two missing capsules.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/discrepancies/55555555-5555-4555-8555-555555555555"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "id": "55555555-5555-4555-8555-555555555555",
+        "shipment_id": "33333333-3333-4333-8333-333333333333",
+        "shipment_line_id": "44444444-4444-4444-8444-444444444442",
+        "request_id": "11111111-1111-4111-8111-111111111111",
+        "facility_id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+        "facility_name": "Riverbend PHC",
+        "item_id": "7d1c5a52-2b61-4f0e-9d0a-5b8f3c2e1a10",
+        "item_code": "amox-250-cap",
+        "item_name": "Amoxicillin 250 mg capsules",
+        "base_unit": "capsule",
+        "batch_id": "c4a9e6b0-8f33-4a57-b1d2-0e6a9f4d7c21",
+        "batch_number": "AMX-2026-014",
+        "qty_dispatched": 25,
+        "qty_received": 23,
+        "qty_missing": 2,
+        "status": "open",
+        "resolution": null,
+        "resolution_note": null,
+        "resolved_at": null,
+        "resolved_by_name": null,
+        "created_at": "2026-11-06T08:30:00Z",
+        "version": 1,
+        "allowed_actions": [
+          "resolve"
+        ]
+      }
+    }
+  }
+}

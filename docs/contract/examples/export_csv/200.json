@@ -1,0 +1,12 @@
+{
+  "description": "The stock register as a CSV file.",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/exports/stock.csv"
+  },
+  "response": {
+    "status": 200,
+    "content_type": "text/csv",
+    "body": "item_code,item_name,base_unit,qty_usable,qty_quarantined,qty_expired,alert_level\r\namox-250-cap,Amoxicillin 250 mg capsules,capsule,480,20,30,reorder\r\nors-sachet,Oral rehydration salts,sachet,0,0,0,out_of_stock\r\n"
+  }
+}

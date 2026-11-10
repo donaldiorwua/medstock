@@ -1,0 +1,4 @@
+# Every change to the contract needs the other engineer's approval (blueprint 2.4).
+# Replace the placeholder with Engineer B's GitHub username, then turn on
+# "Require review from Code Owners" in the branch protection rule for main.
+/docs/contract/ @REPLACE-WITH-ENGINEER-B-GITHUB-USERNAME

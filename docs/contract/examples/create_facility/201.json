@@ -1,0 +1,28 @@
+{
+  "description": "Admin adds a PHC.",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/facilities",
+    "body": {
+      "code": "PHC-Riverbend",
+      "name": "Riverbend PHC",
+      "facility_type": "phc",
+      "timezone": "Africa/Lagos",
+      "is_active": true
+    }
+  },
+  "response": {
+    "status": 201,
+    "body": {
+      "data": {
+        "id": "5d7c2a9e-81b4-4e36-a0c7-6e3f9b1d2a22",
+        "code": "phc-riverbend",
+        "name": "Riverbend PHC",
+        "facility_type": "phc",
+        "timezone": "Africa/Lagos",
+        "is_active": true,
+        "created_at": "2026-10-01T08:05:00Z"
+      }
+    }
+  }
+}
